@@ -1,0 +1,81 @@
+.root {
+  display: grid;
+  grid-template-columns: 1fr 0.75fr 1fr 0.75fr 1fr 0.75fr 1fr;
+  grid-template-rows: 1fr 30px 30px;
+
+  grid-template-areas:
+    "a b c d e f g"
+    "a1 b1 c1 d1 e1 f1 g1"
+    "b2 b2 b2 b2 b2 b2 b2";
+
+  font-family: Roboto;
+  font-size: 10px;
+  font-weight: 400;
+  text-align: center;
+  color: var(--clr-primary);
+
+  &__colTitle {
+    &[data-type="dev"] {
+      grid-area: a1;
+    }
+    &[data-type="test"] {
+      grid-area: c1;
+    }
+    &[data-type="prod"] {
+      grid-area: e1;
+    }
+    &[data-type="normal"] {
+      grid-area: g1;
+    }
+  }
+
+  &__col {
+    margin-bottom: 20px;
+    &[data-type="dev"] {
+      grid-area: a;
+    }
+    &[data-type="test"] {
+      grid-area: c;
+    }
+    &[data-type="prod"] {
+      grid-area: e;
+    }
+    &[data-type="normal"] {
+      grid-area: g;
+    }
+  }
+
+  &__bottom {
+    grid-area: b2;
+
+    font-family: Roboto;
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--clr-primary);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    & > div {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 9px;
+    }
+
+    & > div > div {
+      width: 16px;
+      height: 16px;
+      border-radius: 3px;
+
+      background-color: var(--clr-middle);
+    }
+    & > div:first-child > div {
+      background-color: var(--clr-top);
+    }
+    & > div:last-child > div {
+      background-color: var(--clr-bottom);
+    }
+  }
+}

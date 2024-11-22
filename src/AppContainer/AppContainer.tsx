@@ -1,13 +1,13 @@
 import { LOADING_STATUS } from "@/src/fixtures";
 import useLoadData from "@/src/hooks/useLoadData/useLoadData";
-import DataVisualizer from "@/src/components/DataVisualizer/DataVisualizer";
+import DataVisualizer from "@/src/containers/DataVisualizer/DataVisualizer";
 import styles from "./styles.module.scss";
 
 const dataLinks = [
   "https://rcslabs.ru/ttrp1.json",
-  "https://rcslabs.ru/ttrp2.json",
-  "https://rcslabs.ru/ttrp3.json",
-  "https://rcslabs.ru/ttrp4.json",
+  // "https://rcslabs.ru/ttrp2.json",
+  // "https://rcslabs.ru/ttrp3.json",
+  // "https://rcslabs.ru/ttrp4.json",
   //   "https://rcslabs.ru/ttrp5.json]",
 ];
 

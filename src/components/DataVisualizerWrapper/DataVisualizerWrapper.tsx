@@ -20,18 +20,7 @@ export default function DataVisualizerWrapper({ children, title }: Props) {
           />
         </svg>
       </div>
-      <div className={styles.root__wrapper}>{children}</div>
-      <div className={styles.root__bottomPanel}>
-        <div>
-          <div></div>Клиентская часть
-        </div>
-        <div>
-          <div></div>Серверная часть
-        </div>
-        <div>
-          <div></div>База данных
-        </div>
-      </div>
+      {children}
     </div>
   );
 }

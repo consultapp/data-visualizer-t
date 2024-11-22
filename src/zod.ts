@@ -7,7 +7,7 @@ export const zodSystemData = z.object({
   [SYSTEM_PARTS.front]: z.number().min(0),
 });
 
-export type SystemData = z.infer<typeof zodSystemData>;
+export type zodSystemData = z.infer<typeof zodSystemData>;
 
 export const zodDataVisualizer = z.object({
   title: z.string().min(1),

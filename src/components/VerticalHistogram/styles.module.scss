@@ -1,0 +1,32 @@
+.root {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+
+  & > div {
+    display: grid;
+    align-items: center;
+    color: var(--clr-secondary);
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  & > div:first-child {
+  }
+
+  & > div:nth-child(2) {
+    background-color: var(--clr-top);
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+  }
+  & > div:nth-child(3) {
+    background-color: var(--clr-middle);
+  }
+  & > div:last-child {
+    background-color: var(--clr-bottom);
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+}
