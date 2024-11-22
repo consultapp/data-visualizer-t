@@ -1,5 +1,5 @@
 import { zodDataVisualizer } from "@/src/zod";
-import DataVisualizerWrapper from "../ui/DataVisualizerWrapper/DataVisualizerWrapper";
+import DataVisualizerWrapper from "../DataVisualizerWrapper/DataVisualizerWrapper";
 
 type Props = { data: zodDataVisualizer };
 

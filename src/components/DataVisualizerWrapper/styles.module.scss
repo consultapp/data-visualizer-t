@@ -1,4 +1,6 @@
 .root {
+  box-sizing: border-box;
+
   --clr-primary: rgba(137, 130, 144, 1);
   --clr-secondary: rgba(255, 255, 255, 1);
 
@@ -11,11 +13,16 @@
   --clr-zero: rgba(137, 130, 144, 1);
 
   container-type: inline-size;
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  gap: 50px;
 
   background-color: var(--clr-secondary);
 
   width: clamp(300px, 50vw, 600px);
   height: 534px;
+  padding-block: 13px;
+  padding-inline: 19px;
 
   border-radius: 7px;
 
@@ -25,8 +32,6 @@
 
   &__topPanel {
     color: var(--clr-primary);
-    margin-block: 13px;
-    margin-inline: 19px;
 
     display: flex;
     flex-direction: row;
@@ -36,5 +41,40 @@
     font-family: Roboto;
     font-size: 16px;
     font-weight: 500;
+  }
+
+  &__wrapper {
+  }
+
+  &__bottomPanel {
+    font-family: Roboto;
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--clr-primary);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    & > div {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 9px;
+    }
+
+    & > div > div {
+      width: 16px;
+      height: 16px;
+      border-radius: 3px;
+
+      background-color: var(--clr-middle);
+    }
+    & > div:first-child > div {
+      background-color: var(--clr-top);
+    }
+    & > div:last-child > div {
+      background-color: var(--clr-bottom);
+    }
   }
 }
