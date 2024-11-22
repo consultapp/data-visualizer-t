@@ -1,29 +1,5 @@
 import { z } from "zod";
-
-export const LOADING_STATUS = {
-  idle: "idle",
-  pending: "pending",
-  fullfiled: "fullfiled",
-  error: "error",
-};
-
-export type LoadingStatus = keyof typeof LOADING_STATUS;
-
-export const SYSTEM_PARTS = {
-  front: "front",
-  back: "back",
-  db: "db",
-} as const;
-
-export type SystemParts = keyof typeof SYSTEM_PARTS;
-
-export const SYSTEM_TYPES = {
-  dev: "dev",
-  test: "test",
-  prod: "prod",
-} as const;
-
-export type SystemTypes = keyof typeof SYSTEM_TYPES;
+import { SYSTEM_PARTS, SYSTEM_TYPES } from "./consts";
 
 export const zodSystemData = z.object({
   [SYSTEM_PARTS.back]: z.number().min(0),
