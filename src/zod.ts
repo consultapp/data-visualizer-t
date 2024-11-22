@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { SYSTEM_PARTS, SYSTEM_TYPES } from "./consts";
+import { SYSTEM_PARTS, SYSTEM_TYPES } from "./fixtures";
 
 export const zodSystemData = z.object({
   [SYSTEM_PARTS.back]: z.number().min(0),

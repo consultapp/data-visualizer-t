@@ -1,4 +1,4 @@
-import { LOADING_STATUS } from "@/src/consts";
+import { LOADING_STATUS } from "@/src/fixtures";
 import { zodDataVisualizer } from "@/src/zod";
 import { useEffect, useState } from "react";
 

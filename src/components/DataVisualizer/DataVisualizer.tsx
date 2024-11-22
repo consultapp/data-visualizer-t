@@ -1,8 +1,10 @@
-import { zodDataVisualizer } from "../../zod";
+import { zodDataVisualizer } from "@/src/zod";
+import DataVisualizerWrapper from "../ui/DataVisualizerWrapper/DataVisualizerWrapper";
 
 type Props = { data: zodDataVisualizer };
 
 export default function DataVisualizer({ data }: Props) {
-  console.log("data", data);
-  return <div>DataVisualizer: {data.title}</div>;
+  return (
+    <DataVisualizerWrapper title={data.title}>Container</DataVisualizerWrapper>
+  );
 }
