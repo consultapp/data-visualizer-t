@@ -1,6 +1,6 @@
 import { LOADING_STATUS } from "@/src/fixtures";
 import useLoadData from "@/src/hooks/useLoadData/useLoadData";
-import DataVisualizer from "@/src/containers/DataVisualizer/DataVisualizer";
+import DataVisualizer from "@/src/components/DataVisualizer";
 import styles from "./styles.module.scss";
 
 const dataLinks = [

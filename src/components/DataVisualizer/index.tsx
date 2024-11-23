@@ -1,6 +1,6 @@
 import { zodDataVisualizer } from "@/src/zod";
-import DataVisualizerWrapper from "../../components/DataVisualizerWrapper/DataVisualizerWrapper";
-import InnerWrapper from "../../components/InnerWrapper/InnerWrapper";
+import DataVisualizerWrapper from "./ui/DataVisualizerWrapper/DataVisualizerWrapper";
+import InnerWrapper from "./ui/InnerWrapper/InnerWrapper";
 import { memo, useMemo } from "react";
 import { SYSTEM_TYPES } from "@/src/fixtures";
 
@@ -17,7 +17,6 @@ const DataVisualizer = memo(function ({ data }: Props) {
     }, 0);
   }, [data]);
 
-  console.log("max", max);
   return (
     <DataVisualizerWrapper title={data.title}>
       <InnerWrapper data={data} max={max} />

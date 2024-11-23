@@ -1,0 +1,17 @@
+.root {
+  & span[data-type="positive"] {
+    color: var(--clr-positive);
+    &::before {
+      content: "+";
+    }
+  }
+  & span[data-type="negative"] {
+    color: var(--clr-negative);
+    &::before {
+      content: "-";
+    }
+  }
+  & span[data-type="zero"] {
+    color: var(--clr-zero);
+  }
+}

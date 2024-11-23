@@ -45,6 +45,13 @@
     }
   }
 
+  &__badge1 {
+    grid-area: b;
+  }
+  &__badge2 {
+    grid-area: d;
+  }
+
   &__bottom {
     grid-area: b2;
 

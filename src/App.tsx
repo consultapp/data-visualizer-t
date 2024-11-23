@@ -1,4 +1,4 @@
-import AppContainer from "./AppContainer/AppContainer";
+import AppContainer from "./components/AppContainer/AppContainer";
 
 function App() {
   return <AppContainer />;
