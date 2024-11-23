@@ -12,14 +12,14 @@ export default function InnerWrapper({ data, max }: Props) {
   const values = useMemo(() => Object.keys(SYSTEM_TYPES) as SystemTypes[], []);
   const badge1 = useMemo(
     () =>
-      data[SYSTEM_TYPES.dev].sumSystemDataValues() -
-      data[SYSTEM_TYPES.test].sumSystemDataValues(),
+      data[SYSTEM_TYPES.test].sumSystemDataValues() -
+      data[SYSTEM_TYPES.dev].sumSystemDataValues(),
     [data]
   );
   const badge2 = useMemo(
     () =>
-      data[SYSTEM_TYPES.test].sumSystemDataValues() -
-      data[SYSTEM_TYPES.prod].sumSystemDataValues(),
+      data[SYSTEM_TYPES.prod].sumSystemDataValues() -
+      data[SYSTEM_TYPES.test].sumSystemDataValues(),
     [data]
   );
 
@@ -41,7 +41,7 @@ export default function InnerWrapper({ data, max }: Props) {
       </div>
       {values.map((k) => (
         <div className={styles.root__col} data-type={k} key={k}>
-          <VerticalHistogram data={data[k]} max={max} />
+          <VerticalHistogram data={data[k]} max={max} type={k} />
         </div>
       ))}
       {values.map((k) => (

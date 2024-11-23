@@ -1,17 +1,49 @@
 .root {
-  & span[data-type="positive"] {
-    color: var(--clr-positive);
-    &::before {
-      content: "+";
-    }
+  position: relative;
+
+  &__hl {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 50%;
+    border-bottom: 1px solid var(--clr-primary);
+    z-index: 0;
   }
-  & span[data-type="negative"] {
-    color: var(--clr-negative);
-    &::before {
-      content: "-";
+  &__badge {
+    position: relative;
+    z-index: 100;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+    border-radius: 50px;
+    border: 1px solid var(--clr-secondary);
+    height: 24px;
+
+    padding: 0 10px 0 10px;
+
+    & span {
+      overflow-x: hidden;
+
+      font-family: Roboto;
+      font-size: 14px;
+      font-weight: 700;
+      text-align: center;
+
+      color: var(--clr-secondary);
     }
-  }
-  & span[data-type="zero"] {
-    color: var(--clr-zero);
+
+    &[data-type="positive"] {
+      background-color: var(--clr-positive);
+    }
+    &[data-type="negative"] {
+      background-color: var(--clr-negative);
+    }
+    &[data-type="zero"] {
+      background-color: var(--clr-zero);
+    }
   }
 }

@@ -1,8 +1,17 @@
-.root__vl {
-  height: 100%;
-  & div {
-    width: 50%;
-    border-right: 1px solid var(--clr-primary);
+.root {
+  &__vl {
     height: 100%;
+    & div {
+      width: 50%;
+      border-right: 1px solid var(--clr-primary);
+      height: 100%;
+    }
+  }
+  &__doubleLine {
+    justify-self: center;
+    height: 100%;
+    width: 50%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
 }
