@@ -1,7 +1,7 @@
 .root {
   height: 100%;
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-rows: clamp(50px, 1fr, 1fr) 1fr 1fr 1fr;
 
   & > div {
     display: grid;
@@ -14,14 +14,23 @@
   }
 
   & > div:first-child {
+    background-color: rgba(0, 255, 221, 0.279);
   }
 
   & > div:nth-child(2) {
+    background-color: rgba(0, 208, 255, 0.279);
+  }
+
+  & > div:nth-child(3) {
+    background-color: rgba(255, 0, 255, 0.279);
+  }
+
+  & > div:nth-child(4) {
     background-color: var(--clr-top);
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
   }
-  & > div:nth-child(3) {
+  & > div:nth-child(5) {
     background-color: var(--clr-middle);
   }
   & > div:last-child {

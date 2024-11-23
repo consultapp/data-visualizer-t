@@ -1,0 +1,8 @@
+.root__vl {
+  height: 100%;
+  & div {
+    width: 50%;
+    border-right: 1px solid var(--clr-primary);
+    height: 100%;
+  }
+}
