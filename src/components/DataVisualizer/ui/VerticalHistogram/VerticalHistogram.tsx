@@ -7,10 +7,23 @@ import {
   SystemTypes,
 } from "@/src/fixtures";
 import { useMemo } from "react";
-import End from "../Lines/End";
-import DoubleVerticalLine from "../Lines/DoubleVerticalLine";
-import VerticalLine from "../Lines/VerticalLine";
+
+import TwoColumns from "../TwoColumns/TwoColumns";
+import RightCornerArrow from "../Lines/RightCornerArrow";
+import LeftCornerArrow from "../Lines/LeftCornerArrow";
+
 type Props = { data: zodSystemData; max: number; type: SystemTypes };
+
+const directions = {
+  [SYSTEM_TYPES.dev]: <RightCornerArrow />,
+  [SYSTEM_TYPES.test]: (
+    <TwoColumns>
+      <LeftCornerArrow w100={true} />
+      <RightCornerArrow w100={true} />
+    </TwoColumns>
+  ),
+  [SYSTEM_TYPES.prod]: <LeftCornerArrow />,
+} as const;
 
 export default function VerticalHistogram({ data, max, type }: Props) {
   console.log("zodSystemData", data);
@@ -18,24 +31,20 @@ export default function VerticalHistogram({ data, max, type }: Props) {
   const values = useMemo(() => Object.keys(SYSTEM_PARTS) as SystemParts[], []);
 
   const gridTemplateRows = useMemo(
-    () =>
-      `50px ${max - sum}fr  20px ${values.map((k) => data[k]).join("fr ")}fr`,
+    () => `80px ${max - sum}fr  ${values.map((k) => data[k]).join("fr ")}fr`,
     [max, sum, values, data]
   );
 
   console.log("VerticalHistogram:", max, sum, gridTemplateRows);
   return (
     <div className={styles.root} style={{ gridTemplateRows }}>
-      <div key={-3}>-3</div>
-      <div key={-2}>
-        {type === SYSTEM_TYPES.test && <DoubleVerticalLine />}
-        {type !== SYSTEM_TYPES.test && <VerticalLine />}
-      </div>
-      <div key={-1}>
-        <End />
+      <div key={-1} data-type="filler">
+        {directions[type]}
       </div>
       {values.map((k, i) => (
-        <div key={i}>{data[k]}</div>
+        <div key={i} data-system-part={k}>
+          {data[k]}
+        </div>
       ))}
     </div>
   );

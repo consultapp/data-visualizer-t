@@ -1,17 +1,39 @@
 .root {
-  &__vl {
+  &__right_arrow {
+    display: flex;
+    justify-content: flex-end;
+
     height: 100%;
     & div {
       width: 50%;
-      border-right: 1px solid var(--clr-primary);
+      border-left: 1px solid var(--clr-primary);
+      border-top: 1px solid var(--clr-primary);
       height: 100%;
     }
   }
-  &__doubleLine {
-    justify-self: center;
+
+  &__left_arrow {
+    display: flex;
+    justify-content: flex-start;
+
     height: 100%;
-    width: 50%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    & div {
+      position: relative;
+
+      width: 50%;
+      border-right: 1px solid var(--clr-primary);
+      border-top: 1px solid var(--clr-primary);
+      height: 100%;
+
+      & svg {
+        position: absolute;
+        right: -4px;
+        bottom: 0;
+      }
+    }
+  }
+
+  &__arrow_full div {
+    width: 100%;
   }
 }
