@@ -26,7 +26,6 @@ const directions = {
 } as const;
 
 export default function VerticalHistogram({ data, max, type }: Props) {
-  console.log("zodSystemData", data);
   const sum = useMemo(() => data.sumSystemDataValues(), [data]);
   const values = useMemo(() => Object.keys(SYSTEM_PARTS) as SystemParts[], []);
 
@@ -35,7 +34,6 @@ export default function VerticalHistogram({ data, max, type }: Props) {
     [max, sum, values, data]
   );
 
-  console.log("VerticalHistogram:", max, sum, gridTemplateRows);
   return (
     <div className={styles.root} style={{ gridTemplateRows }}>
       <div key={-1} data-type="filler">

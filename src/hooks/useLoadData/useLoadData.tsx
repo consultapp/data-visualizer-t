@@ -34,7 +34,6 @@ function useLoadData(links: string[]) {
             .map((r) => r.data);
 
           if (result.length) {
-            console.log("Result", result);
             setData(result as zodDataVisualizer[]);
             setLoading(LOADING_STATUS.fullfiled);
           } else throw new Error("Parse Data Error.");

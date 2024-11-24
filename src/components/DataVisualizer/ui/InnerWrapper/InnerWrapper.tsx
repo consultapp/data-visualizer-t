@@ -27,7 +27,7 @@ export default function InnerWrapper({ data, max }: Props) {
     <div className={styles.root}>
       <div className={styles.root__bottom}>
         {RU_NAMES.map((n) => (
-          <div>
+          <div key={n}>
             <div></div>
             {n}
           </div>
