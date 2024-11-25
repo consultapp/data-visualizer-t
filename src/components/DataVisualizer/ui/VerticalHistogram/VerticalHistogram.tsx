@@ -11,7 +11,7 @@ import { useMemo } from "react";
 import TwoColumns from "../TwoColumns/TwoColumns";
 import RightCornerArrow from "../Lines/RightCornerArrow";
 import LeftCornerArrow from "../Lines/LeftCornerArrow";
-import { fraction, fractionFiler } from "../../histogramFns";
+import { fraction, fractionFiler, getScale } from "../../histogramFns";
 
 type Props = { data: zodSystemData; max: number; type: SystemTypes };
 
@@ -29,13 +29,14 @@ const directions = {
 export default function VerticalHistogram({ data, max, type }: Props) {
   const sum = useMemo(() => data.sumSystemDataValues(), [data]);
   const values = useMemo(() => Object.keys(SYSTEM_PARTS) as SystemParts[], []);
+  const scaleValue = useMemo(() => getScale(max), [max]);
 
   const gridTemplateRows = useMemo(
     () =>
-      `80px ${fractionFiler(max - sum)} ${values
-        .map((k) => fraction(data[k]))
+      `80px ${fractionFiler(max - sum, scaleValue)} ${values
+        .map((k) => fraction(data[k], scaleValue))
         .join(" ")}`,
-    [max, sum, values, data]
+    [max, sum, scaleValue, values, data]
   );
 
   return (
