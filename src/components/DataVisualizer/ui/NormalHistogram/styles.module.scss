@@ -34,6 +34,10 @@
 
     overflow: hidden;
 
+    background-image: url("./image.png");
+    background-repeat: repeat-y;
+    background-size: cover;
+
     & > span {
       width: 48px;
       height: 24px;
@@ -44,6 +48,7 @@
       z-index: 10;
     }
     & > svg {
+      display: none;
       position: absolute;
       top: 0;
       left: 0;
