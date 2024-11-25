@@ -11,7 +11,11 @@ import { useMemo } from "react";
 import TwoColumns from "../TwoColumns/TwoColumns";
 import RightCornerArrow from "../Lines/RightCornerArrow";
 import LeftCornerArrow from "../Lines/LeftCornerArrow";
-import { fraction, fractionFiler, getScale } from "../../histogramFns";
+import {
+  fraction,
+  fractionFiler,
+  getScale,
+} from "../../functions/histogramFns";
 
 type Props = { data: zodSystemData; max: number; type: SystemTypes };
 

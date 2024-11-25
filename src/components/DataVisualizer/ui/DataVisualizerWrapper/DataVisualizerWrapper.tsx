@@ -1,5 +1,4 @@
 import styles from "./styles.module.scss";
-import "@/src/fns";
 
 type Props = { children: React.ReactNode; title: string };
 

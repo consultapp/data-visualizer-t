@@ -1,6 +1,10 @@
 import { useMemo } from "react";
 import styles from "./styles.module.scss";
-import { fraction, fractionFiler, getScale } from "../../histogramFns";
+import {
+  fraction,
+  fractionFiler,
+  getScale,
+} from "../../functions/histogramFns";
 
 type Props = { value: number; max: number };
 

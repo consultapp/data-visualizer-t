@@ -3,6 +3,7 @@ import DataVisualizerWrapper from "./ui/DataVisualizerWrapper/DataVisualizerWrap
 import InnerWrapper from "./ui/InnerWrapper/InnerWrapper";
 import { memo, useMemo } from "react";
 import { SYSTEM_TYPES } from "@/src/fixtures";
+import "./functions/fns";
 
 type Props = { data: zodDataVisualizer };
 
