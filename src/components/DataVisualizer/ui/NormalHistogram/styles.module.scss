@@ -1,0 +1,54 @@
+.root {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+
+  grid-template-areas:
+    "filler"
+    "filler"
+    "value";
+
+  & > div {
+    display: grid;
+    align-items: center;
+    color: var(--clr-primary);
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 24px;
+  }
+
+  & > div[data-type="value"] {
+    position: relative;
+    grid-area: value;
+
+    display: flex;
+    align-content: center;
+    justify-content: center;
+
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+    overflow: hidden;
+
+    & > span {
+      width: 48px;
+      height: 24px;
+
+      background: var(--clr-secondary);
+      border-radius: 5px;
+
+      z-index: 10;
+    }
+    & > svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}

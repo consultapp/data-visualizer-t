@@ -4,6 +4,7 @@ import { SYSTEM_TYPES, SystemTypes } from "@/src/fixtures";
 import VerticalHistogram from "../VerticalHistogram/VerticalHistogram";
 import { useMemo } from "react";
 import NumberBadge from "../NumberBadge/NumberBadge";
+import NormalHistogram from "../NormalHistogram/NormalHistogram";
 type Props = { data: zodDataVisualizer; max: number };
 
 const RU_NAMES = ["Клиентская часть", "Серверная часть", "База данных"];
@@ -49,7 +50,9 @@ export default function InnerWrapper({ data, max }: Props) {
           {k}
         </div>
       ))}
-      <div className={styles.root__col} data-type="normal"></div>
+      <div className={styles.root__col} data-type="normal">
+        <NormalHistogram value={data.norm} max={max} />
+      </div>
       <div className={styles.root__colTitle} data-type="normal">
         норматив
       </div>

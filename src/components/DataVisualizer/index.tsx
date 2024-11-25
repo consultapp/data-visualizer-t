@@ -13,7 +13,7 @@ const DataVisualizer = memo(function ({ data }: Props) {
       if (k in SYSTEM_TYPES) {
         tmp += Object.values(v).reduce((a, v) => a + v, 0);
       }
-      return Math.max(acc, tmp);
+      return Math.max(acc, tmp, data.norm);
     }, 0);
   }, [data]);
 
