@@ -37,7 +37,7 @@ export default function VerticalHistogram({ data, max, type }: Props) {
 
   const gridTemplateRows = useMemo(
     () =>
-      `80px ${fractionFiler(max - sum, scaleValue)} ${values
+      `60px ${fractionFiler(max - sum, scaleValue)} ${values
         .map((k) => fraction(data[k], scaleValue))
         .join(" ")}`,
     [max, sum, scaleValue, values, data]
